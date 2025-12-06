@@ -39,7 +39,7 @@ gdbus call --session --dest com.github.flxzt.rnote --object-path /com/github/flx
 
 ### 3. Export Shortcut
   
-  - Command: ```gdbus call --session --dest com.github.flxzt.rnote --object-path /com/github/flxzt/rnote --method com.github.flxzt.rnote.Export``
+  - Command: ```gdbus call --session --dest com.github.flxzt.rnote --object-path /com/github/flxzt/rnote --method com.github.flxzt.rnote.Export```
   - Function: Exports your current document to your default export format
   - Default Shortcut: Ctrl + E
   - Use Case: When you need to quickly save your work in a different format (PDF, SVG, etc.)
