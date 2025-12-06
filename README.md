@@ -89,5 +89,3 @@ The exact D-Bus method names may vary depending on your Rnote version. If the co
 *This repository provides documentation only - no actual code files are included.*
 
 
-Modifica Immagine
-
