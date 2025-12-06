@@ -1,8 +1,9 @@
 # Personalizing-Rnote-Launchers
 
-Customize your Rnote experience with these keyboard shortcuts to improve your note-taking workflow. This repository provides instructions for setting up three essential shortcuts that let you control Rnote directly from your keyboard.
+Customize your Rnote experience with these keyboard shortcuts to improve your note-taking workflow. This repository provides instructions for setting up three  shortcuts that let you control Rnote directly from your keyboard.
 
 ## Features
+
 - Add new pages instantly without navigating menus
 - Export notes with a single key combination
 - Remove pages efficiently during editing
@@ -10,6 +11,7 @@ Customize your Rnote experience with these keyboard shortcuts to improve your no
 - Compatible with GNOME, KDE, and other major desktop environments
 
 ## How These Shortcuts Work
+
 Rnote exposes a D-Bus interface that allows external programs to control it. These shortcuts use ```gdbus``` (the GNOME D-Bus client) to send commands to Rnote's service. When you press the configured keyboard combination, the system sends a D-Bus message to Rnote, which then executes the corresponding action.
 
 The commands follow this pattern:
@@ -28,28 +30,19 @@ gdbus call --session --dest com.github.flxzt.rnote --object-path /com/github/flx
   - Default Shortcut: Ctrl + Alt + +
   - Use Case: When you need to quickly add more space for your notes without interrupting your flow
 
-### 2. Export Shortcut
-  
-  - Command: ```gdbus call --session --dest com.github.flxzt.rnote --object-path /com/github/flxzt/rnote --method com.github.flxzt.rnote.Export``
-  - Function: Exports your current document to your default export format
-  - Default Shortcut: Ctrl + E
-  - Use Case: When you need to quickly save your work in a different format (PDF, SVG, etc.)
-
-### 3. Remove Page Shortcut
+### 2. Remove Page Shortcut
   
   - Command: gdbus call --session --dest com.github.flxzt.rnote --object-path /com/github/flxzt/rnote --method com.github.flxzt.rnote.RemovePage
   - Function: Removes the currently selected page from your document
   - Default Shortcut: Ctrl + Alt + -
   - Use Case: When you need to clean up your document by removing unwanted pages
 
-## Prerequisites
-  - Rnote must be installed on your system
-  - Your desktop environment must support custom keyboard shortcuts
-  - Rnote must be running when you use these shortcuts (they won't launch Rnote)
-
-## Installation
-
-No installation is needed for the shortcuts themselves. You just need to configure them in your system settings.
+### 3. Export Shortcut
+  
+  - Command: ```gdbus call --session --dest com.github.flxzt.rnote --object-path /com/github/flxzt/rnote --method com.github.flxzt.rnote.Export``
+  - Function: Exports your current document to your default export format
+  - Default Shortcut: Ctrl + E
+  - Use Case: When you need to quickly save your work in a different format (PDF, SVG, etc.)
 
 ## Setup Instructions
 
@@ -58,12 +51,13 @@ No installation is needed for the shortcuts themselves. You just need to configu
 - Open *Settings > Keyboard Shortcuts*
 - Click *+* to add a custom shortcut
 - Fill in the details:
-    - Name: [Choose one of the three names shown in screenshots]
+    - Name: 
     - Command: [Use the specific command for that shortcut]
     - Shortcut: [Press your desired key combination]
 - Click Add
 
 ### For KDE:
+
 - Open System *Settings > Shortcuts*
 - Click Custom Shortcuts
 - Right-click and select *New > Global Shortcut > Command/URL*
@@ -74,10 +68,11 @@ No installation is needed for the shortcuts themselves. You just need to configu
 - Click Apply
 
 ### For Other Desktop Environments:
+
 The process is similar - look for "Custom Shortcuts" or "Keyboard Shortcuts" in your system settings.
 
 ## Troubleshooting
-- Shortcut doesn't work: Make sure Rnote is running before using the shortcut
+
 - Command not found: Verify you have ```gdbus``` installed (part of ```glib2``` or similar package)
 - Permission denied: Check that Rnote's D-Bus interface is properly exposed
 - No visible effect: The command might be working but the UI doesn't update immediately - try pressing the shortcut again
