@@ -1,4 +1,4 @@
-# Personalizing-Rnote-launchers
+# Personalizing-Rnote-Launchers
 
 Customize your Rnote experience with these keyboard shortcuts to improve your note-taking workflow. This repository provides instructions for setting up three essential shortcuts that let you control Rnote directly from your keyboard.
 
