@@ -25,24 +25,39 @@ gdbus call --session --dest com.github.flxzt.rnote --object-path /com/github/flx
 
 ### 1. Add Page Shortcut
 
-  - Command: ```gdbus call --session --dest com.github.flxzt.rnote --object-path /com/github/flxzt/rnote --method com.github.flxzt.rnote.AddPage```
+  - Command: ```gdbus call --session --dest com.github.flxzt.rnote --object-path /com/github/flxzt/rnote/window/1 --method org.gtk.Actions.Activate add-page-to-doc "[]" "{}"```
   - Function: Creates a new blank page in your current Rnote document
   - Default Shortcut: Ctrl + Alt + +
-  - Use Case: When you need to quickly add more space for your notes without interrupting your flow
-
+  - 
 ### 2. Remove Page Shortcut
   
-  - Command: gdbus call --session --dest com.github.flxzt.rnote --object-path /com/github/flxzt/rnote --method com.github.flxzt.rnote.RemovePage
+  - Command: ```gdbus call --session --dest com.github.flxzt.rnote --object-path /com/github/flxzt/rnote/window/1 --method org.gtk.Actions.Activate remove-page-from-doc "[]" "{}"```
   - Function: Removes the currently selected page from your document
   - Default Shortcut: Ctrl + Alt + -
-  - Use Case: When you need to clean up your document by removing unwanted pages
 
 ### 3. Export Shortcut
   
-  - Command: ```gdbus call --session --dest com.github.flxzt.rnote --object-path /com/github/flxzt/rnote --method com.github.flxzt.rnote.Export```
+  - Command: ```gdbus call --session --dest com.github.flxzt.rnote --object-path /com/github/flxzt/rnote/window/1 --method org.gtk.Actions.Activate export-doc "[]" "{}"```
   - Function: Exports your current document to your default export format
   - Default Shortcut: Ctrl + E
-  - Use Case: When you need to quickly save your work in a different format (PDF, SVG, etc.)
+
+### 4. Selector 
+  
+  - Command: ```gdbus call --session --dest com.github.flxzt.rnote --object-path /com/github/flxzt/rnote/window/1 --method org.gtk.Actions.Activate pen-style "[<@s 'selector'>]" "{}"```
+  - Function: switch to defualt Selector frame
+  - Default Shortcut: Ctrl + W
+
+### 5. Shaper 
+  
+  - Command: ```gdbus call --session --dest com.github.flxzt.rnote --object-path /com/github/flxzt/rnote/window/1 --method org.gtk.Actions.Activate pen-style "[<@s 'shaper'>]" "{}"```
+  - Function: switch to defualt Shaper shape
+  - Default Shortcut: Ctrl + Q
+
+### 5. Typewriter
+  
+  - Command: ```gdbus call --session --dest com.github.flxzt.rnote --object-path /com/github/flxzt/rnote/window/1 --method org.gtk.Actions.Activate pen-style "[<'typewriter'>]" "{}"```
+  - Function: switch to defualt Typewriter to type
+  - Default Shortcut: Ctrl + T
 
 ## Setup Instructions
 
