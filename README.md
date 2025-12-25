@@ -67,15 +67,6 @@ gdbus call --session --dest com.github.flxzt.rnote --object-path /com/github/flx
   - Comment: Add a description
 - Click Apply
 
-### For Other Desktop Environments:
-
-The process is similar - look for "Custom Shortcuts" or "Keyboard Shortcuts" in your system settings.
-
-## Troubleshooting
-
-- Command not found: Verify you have ```gdbus``` installed (part of ```glib2``` or similar package)
-- Permission denied: Check that Rnote's D-Bus interface is properly exposed
-- No visible effect: The command might be working but the UI doesn't update immediately - try pressing the shortcut again
 
 ## Customization
 
