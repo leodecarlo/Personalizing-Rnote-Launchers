@@ -79,13 +79,21 @@ The process is similar - look for "Custom Shortcuts" or "Keyboard Shortcuts" in 
 
 ## Customization
 
-Add additional Rnote commands by exploring its D-Bus interface. To explore available Rnote D-Bus methods:
+You can create custom shortcuts for almost any feature in Rnote by calling the specific **Action Name** through D-Bus.
 
-```bash gdbus introspect --session --dest com.github.flxzt.rnote --object-path /com/github/flxzt/rnote ```
+To see a list of all available actions (like `undo`, `redo`, `zoom-in`, etc.) for the current window, run tis command while Rnote is open:
 
-## Note
-The exact D-Bus method names may vary depending on your Rnote version. If the commands don't work, you may need to adjust the method name based on your specific Rnote installation.
+```bash
+gdbus introspect --session --dest com.github.flxzt.rnote --object-path /com/github/flxzt/rnote/window/1```
 
-*This repository provides documentation only - no actual code files are included.*
+### Constructing a Command
+Once you find an action name (e.g., undo), follow this pattern to create the command:
 
+```bash
+gdbus call --session --dest com.github.flxzt.rnote --object-path /com/github/flxzt/rnote/window/1 --method org.gtk.Actions.Activate "undo" "[]" "{}" ```
+
+Common parameter types:
+  - Simple actions: Use "[]" "{}" (e.g., Undo, Redo).
+
+  - State actions: require parameters inside the brackets, like "[<@s 'selector'>]" for tool switching.
 
