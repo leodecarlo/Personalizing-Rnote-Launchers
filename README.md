@@ -28,7 +28,7 @@ gdbus call --session --dest com.github.flxzt.rnote --object-path /com/github/flx
   - Command: ```gdbus call --session --dest com.github.flxzt.rnote --object-path /com/github/flxzt/rnote/window/1 --method org.gtk.Actions.Activate add-page-to-doc "[]" "{}"```
   - Function: Creates a new blank page in your current Rnote document
   - Default Shortcut: Ctrl + Alt + +
-  - 
+
 ### 2. Remove Page Shortcut
   
   - Command: ```gdbus call --session --dest com.github.flxzt.rnote --object-path /com/github/flxzt/rnote/window/1 --method org.gtk.Actions.Activate remove-page-from-doc "[]" "{}"```
